@@ -17,13 +17,15 @@ public static class Extensions
     /// </summary>
     /// <param name="serviceCollection">The Microsoft.Extensions.DependencyInjection.IServiceCollection.</param>
     /// <param name="configuration">A delegate that is used to configure an System.Net.Http.HttpClient.</param>
+    /// <param name="sectionName">Section name that is used to configure an System.Net.Http.HttpClient.</param>
     /// <returns>The Microsoft.Extensions.DependencyInjection.IServiceCollection.</returns>
     public static IServiceCollection AddWeatherApiService(
             this IServiceCollection serviceCollection,
-            IConfiguration configuration)
+            IConfiguration configuration, string sectionName = "WeatherApi")
     {
         ArgumentNullException.ThrowIfNull(serviceCollection);
         ArgumentNullException.ThrowIfNull(configuration);
+        ArgumentNullException.ThrowIfNullOrEmpty(sectionName);
 
         serviceCollection.AddTransient<WeatherHandler>().AddHttpClient<IWeatherClient, WeatherClient>((sp, client) =>
         {
@@ -32,14 +34,14 @@ public static class Extensions
             ArgumentNullException.ThrowIfNullOrWhiteSpace(options.Value?.Token);
 
             client.BaseAddress = new Uri(options.Value.Url);
-            client.DefaultRequestHeaders.UserAgent.ParseAdd("WeatherApi");
+            client.DefaultRequestHeaders.UserAgent.ParseAdd(sectionName);
         })
         .AddHttpMessageHandler<WeatherHandler>()
         .AddPolicyHandler(Create())
         .SetHandlerLifetime(Timeout.InfiniteTimeSpan)
         .ConfigurePrimaryHttpMessageHandler(sp => Create(sp.GetRequiredService<IOptions<WeatherOptions>>()));
 
-        serviceCollection.Configure<WeatherOptions>(configuration.GetSection("WeatherApi"));
+        serviceCollection.Configure<WeatherOptions>(configuration.GetSection(sectionName));
 
         return serviceCollection;
     }
