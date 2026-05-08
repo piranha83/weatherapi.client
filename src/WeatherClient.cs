@@ -477,10 +477,6 @@ namespace WeatherApi.Client
                     {
                         urlBuilder_.Append(System.Uri.EscapeDataString("wind100mph")).Append('=').Append(System.Uri.EscapeDataString(ConvertToString(getHistoryRequest.Wind100mph, System.Globalization.CultureInfo.InvariantCulture))).Append('&');
                     }
-                    if (getHistoryRequest.Wind100kph != null)
-                    {
-                        urlBuilder_.Append(System.Uri.EscapeDataString("wind100kph")).Append('=').Append(System.Uri.EscapeDataString(ConvertToString(getHistoryRequest.Wind100kph, System.Globalization.CultureInfo.InvariantCulture))).Append('&');
-                    }
                     if (getHistoryRequest.Lang != null)
                     {
                         urlBuilder_.Append(System.Uri.EscapeDataString("lang")).Append('=').Append(System.Uri.EscapeDataString(ConvertToString(getHistoryRequest.Lang, System.Globalization.CultureInfo.InvariantCulture))).Append('&');
@@ -874,16 +870,16 @@ namespace WeatherApi.Client
         public string Q { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("aqi")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<GetCurrentRequestAqi>))]
-        public GetCurrentRequestAqi? Aqi { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<Aqi>))]
+        public Aqi? Aqi { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("pollen")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<GetCurrentRequestPollen>))]
-        public GetCurrentRequestPollen? Pollen { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<Pollen>))]
+        public Pollen? Pollen { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("lang")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<GetCurrentRequestLang>))]
-        public GetCurrentRequestLang? Lang { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<Lang>))]
+        public Lang? Lang { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("current_fields")]
         public string Current_fields { get; set; }
@@ -910,16 +906,16 @@ namespace WeatherApi.Client
         public double? Hour { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("alerts")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<GetForecastRequestAlerts>))]
-        public GetForecastRequestAlerts? Alerts { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<Alerts2>))]
+        public Alerts2? Alerts { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("aqi")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<GetForecastRequestAqi>))]
-        public GetForecastRequestAqi? Aqi { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<Aqi>))]
+        public Aqi? Aqi { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("pollen")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<GetForecastRequestPollen>))]
-        public GetForecastRequestPollen? Pollen { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<Pollen>))]
+        public Pollen? Pollen { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("tp")]
         public double? Tp { get; set; }
@@ -934,12 +930,12 @@ namespace WeatherApi.Client
         public string Hour_fields { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("et0")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<GetForecastRequestEt0>))]
-        public GetForecastRequestEt0? Et0 { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<Et0>))]
+        public Et0? Et0 { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("lang")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<GetForecastRequestLang>))]
-        public GetForecastRequestLang? Lang { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<Lang>))]
+        public Lang? Lang { get; set; }
 
     }
 
@@ -960,21 +956,21 @@ namespace WeatherApi.Client
         public string End_dt { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("unixend_dt")]
-        public double? Unixend_dt { get; set; }
+        public int? Unixend_dt { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("hour")]
-        public double? Hour { get; set; }
+        public int? Hour { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("aqi")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<GetHistoryRequestAqi>))]
-        public GetHistoryRequestAqi? Aqi { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<Aqi>))]
+        public Aqi? Aqi { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("pollen")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<GetHistoryRequestPollen>))]
-        public GetHistoryRequestPollen? Pollen { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<Pollen>))]
+        public Pollen? Pollen { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("tp")]
-        public double? Tp { get; set; }
+        public int? Tp { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("current_fields")]
         public string Current_fields { get; set; }
@@ -986,24 +982,20 @@ namespace WeatherApi.Client
         public string Hour_fields { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("solar")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<GetHistoryRequestSolar>))]
-        public GetHistoryRequestSolar? Solar { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<Solar>))]
+        public Solar? Solar { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("et0")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<GetHistoryRequestEt0>))]
-        public GetHistoryRequestEt0? Et0 { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<Et0>))]
+        public Et0? Et0 { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("wind100mph")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<GetHistoryRequestWind100mph>))]
-        public GetHistoryRequestWind100mph? Wind100mph { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("wind100kph")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<GetHistoryRequestWind100kph>))]
-        public GetHistoryRequestWind100kph? Wind100kph { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<Wind100mph>))]
+        public Wind100mph? Wind100mph { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("lang")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<GetHistoryRequestLang>))]
-        public GetHistoryRequestLang? Lang { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter<Lang>))]
+        public Lang? Lang { get; set; }
 
     }
 
@@ -1039,7 +1031,7 @@ namespace WeatherApi.Client
         public string Tz_id { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("localtime_epoch")]
-        public double Localtime_epoch { get; set; }
+        public int Localtime_epoch { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("localtime")]
         public string Localtime { get; set; }
@@ -1051,7 +1043,7 @@ namespace WeatherApi.Client
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("last_updated_epoch")]
-        public double Last_updated_epoch { get; set; }
+        public int Last_updated_epoch { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("last_updated")]
         public string Last_updated { get; set; }
@@ -1174,7 +1166,7 @@ namespace WeatherApi.Client
         public string Tz_id { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("localtime_epoch")]
-        public double Localtime_epoch { get; set; }
+        public int Localtime_epoch { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("localtime")]
         public string Localtime { get; set; }
@@ -1318,7 +1310,7 @@ namespace WeatherApi.Client
         public string Tz_id { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("localtime_epoch")]
-        public double Localtime_epoch { get; set; }
+        public int Localtime_epoch { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("localtime")]
         public string Localtime { get; set; }
@@ -1357,7 +1349,7 @@ namespace WeatherApi.Client
         public string Tz_id { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("localtime_epoch")]
-        public double Localtime_epoch { get; set; }
+        public int Localtime_epoch { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("localtime")]
         public string Localtime { get; set; }
@@ -1374,7 +1366,7 @@ namespace WeatherApi.Client
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.6.3.0 (NJsonSchema v11.5.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetCurrentRequestAqi
+    public enum Aqi
     {
 
         [System.Text.Json.Serialization.JsonStringEnumMemberName(@"yes")]
@@ -1386,7 +1378,7 @@ namespace WeatherApi.Client
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.6.3.0 (NJsonSchema v11.5.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetCurrentRequestPollen
+    public enum Pollen
     {
 
         [System.Text.Json.Serialization.JsonStringEnumMemberName(@"yes")]
@@ -1398,19 +1390,19 @@ namespace WeatherApi.Client
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.6.3.0 (NJsonSchema v11.5.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetCurrentRequestLang
+    public enum Lang
     {
 
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"ru")]
-        Ru = 0,
+        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"En")]
+        En = 0,
 
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"en")]
-        En = 1,
+        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"Ru")]
+        Ru = 1,
 
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.6.3.0 (NJsonSchema v11.5.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetForecastRequestAlerts
+    public enum Alerts2
     {
 
         [System.Text.Json.Serialization.JsonStringEnumMemberName(@"yes")]
@@ -1422,7 +1414,7 @@ namespace WeatherApi.Client
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.6.3.0 (NJsonSchema v11.5.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetForecastRequestAqi
+    public enum Et0
     {
 
         [System.Text.Json.Serialization.JsonStringEnumMemberName(@"yes")]
@@ -1434,7 +1426,7 @@ namespace WeatherApi.Client
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.6.3.0 (NJsonSchema v11.5.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetForecastRequestPollen
+    public enum Solar
     {
 
         [System.Text.Json.Serialization.JsonStringEnumMemberName(@"yes")]
@@ -1446,7 +1438,7 @@ namespace WeatherApi.Client
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.6.3.0 (NJsonSchema v11.5.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetForecastRequestEt0
+    public enum Wind100mph
     {
 
         [System.Text.Json.Serialization.JsonStringEnumMemberName(@"yes")]
@@ -1454,102 +1446,6 @@ namespace WeatherApi.Client
 
         [System.Text.Json.Serialization.JsonStringEnumMemberName(@"no")]
         No = 1,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.6.3.0 (NJsonSchema v11.5.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetForecastRequestLang
-    {
-
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"ru")]
-        Ru = 0,
-
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"en")]
-        En = 1,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.6.3.0 (NJsonSchema v11.5.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetHistoryRequestAqi
-    {
-
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"yes")]
-        Yes = 0,
-
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"no")]
-        No = 1,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.6.3.0 (NJsonSchema v11.5.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetHistoryRequestPollen
-    {
-
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"yes")]
-        Yes = 0,
-
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"no")]
-        No = 1,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.6.3.0 (NJsonSchema v11.5.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetHistoryRequestSolar
-    {
-
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"yes")]
-        Yes = 0,
-
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"no")]
-        No = 1,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.6.3.0 (NJsonSchema v11.5.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetHistoryRequestEt0
-    {
-
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"yes")]
-        Yes = 0,
-
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"no")]
-        No = 1,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.6.3.0 (NJsonSchema v11.5.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetHistoryRequestWind100mph
-    {
-
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"yes")]
-        Yes = 0,
-
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"no")]
-        No = 1,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.6.3.0 (NJsonSchema v11.5.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetHistoryRequestWind100kph
-    {
-
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"yes")]
-        Yes = 0,
-
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"no")]
-        No = 1,
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.6.3.0 (NJsonSchema v11.5.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum GetHistoryRequestLang
-    {
-
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"ru")]
-        Ru = 0,
-
-        [System.Text.Json.Serialization.JsonStringEnumMemberName(@"en")]
-        En = 1,
 
     }
 
@@ -1601,7 +1497,7 @@ namespace WeatherApi.Client
         public System.DateTime Date { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("date_epoch")]
-        public double Date_epoch { get; set; }
+        public int Date_epoch { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("day")]
         public Day Day { get; set; }
@@ -1623,7 +1519,7 @@ namespace WeatherApi.Client
         public System.DateTime Date { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("date_epoch")]
-        public double Date_epoch { get; set; }
+        public int Date_epoch { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("day")]
         public Day2 Day { get; set; }
@@ -1785,7 +1681,7 @@ namespace WeatherApi.Client
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("time_epoch")]
-        public double Time_epoch { get; set; }
+        public int Time_epoch { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("time")]
         public string Time { get; set; }
@@ -1995,7 +1891,7 @@ namespace WeatherApi.Client
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("time_epoch")]
-        public double Time_epoch { get; set; }
+        public int Time_epoch { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("time")]
         public string Time { get; set; }
