@@ -8,7 +8,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <!-- NuGet Metadata -->
     <PackageId>WeatherApi.Client</PackageId>
-    <Version>1.0.0</Version>
+    <Version>2.0.0</Version>
     <Authors>Vadim Sklyarov</Authors>
     <Description>This is an API collection of the current Weather Platform Core APIs.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
